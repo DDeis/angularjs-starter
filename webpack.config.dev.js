@@ -15,7 +15,7 @@ export default {
     'webpack-hot-middleware/client?reload=true',
     '@babel/polyfill',
     // Defining path seems necessary for this to work consistently on Windows machines.
-    path.resolve(__dirname, 'src/index.js'),
+    path.resolve(__dirname, 'src/app.js'),
   ],
   target: 'web',
   mode: 'development',
@@ -38,20 +38,21 @@ export default {
       },
       inject: true,
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.$': 'jquery',
-      'window.jQuery': 'jquery',
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    //   'window.$': 'jquery',
+    //   'window.jQuery': 'jquery',
+    // }),
   ],
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      { test: /\.html$/, use: ['raw-loader'] },
       {
         test: /\.eot(\?v=\d+.\d+.\d+)?$/,
         use: ['file-loader'],

@@ -20,10 +20,10 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
 export default {
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.json'],
+    extensions: ['*', '.js', '.json'],
   },
   devtool: 'source-map', // more info:https://webpack.js.org/guides/production/#source-mapping and https://webpack.js.org/configuration/devtool/
-  entry: ['@babel/polyfill', path.resolve(__dirname, 'src/index')],
+  entry: ['@babel/polyfill', path.resolve(__dirname, 'src/app.js')],
   target: 'web',
   mode: 'production',
   output: {

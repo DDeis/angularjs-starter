@@ -32,7 +32,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "angular": "1.7.3"
+    "angular": "1.7.3",
+    "normalize.css": "8.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-rc.1",
@@ -55,6 +56,7 @@
     "eslint": "5.3.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "3.0.1",
+    "eslint-plugin-angular": "3.3.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-watch": "4.0.2",
@@ -77,6 +79,7 @@
     "prompt": "1.0.0",
     "prop-types": "15.6.2",
     "raf": "3.4.0",
+    "raw-loader": "0.5.1",
     "replace": "1.0.0",
     "rimraf": "2.6.2",
     "sass-loader": "7.1.0",
@@ -98,81 +101,5 @@
     "setupFiles": [
       "raf/polyfill"
     ]
-  },
-  "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          "@babel/env"
-        ]
-      },
-      "production": {
-        "presets": [
-          [
-            "@babel/env",
-            {
-              "modules": false,
-              "forceAllTransforms": true,
-              "targets": {
-                "ie": 9
-              }
-            }
-          ]
-        ],
-        "plugins": [
-          "angularjs-annotate"
-        ]
-      },
-      "test": {
-        "presets": [
-          "@babel/env"
-        ]
-      }
-    }
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "eslint:recommended",
-      "plugin:prettier/recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "airbnb-base"
-    ],
-    "plugins": [],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "experimentalObjectRestSpread": true
-      }
-    },
-    "env": {
-      "es6": true,
-      "browser": true,
-      "node": true,
-      "jquery": true,
-      "jest": true
-    },
-    "globals": {},
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "trailingComma": "all",
-          "arrowParens": "avoid"
-        }
-      ],
-      "arrow-parens": [
-        "error",
-        "as-needed",
-        {
-          "requireForBlockBody": false
-        }
-      ],
-      "import/no-extraneous-dependencies": "off"
-    }
   }
 }
