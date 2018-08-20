@@ -42,5 +42,6 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': 'off',
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
   },
 };
